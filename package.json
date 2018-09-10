@@ -19,7 +19,7 @@
     "test:lint": "eslint lib/"
   },
   "dependencies": {
-    "hls.js": "^0.8.9",
+    "hls.js": "^0.11.0",
     "lodash.defaults": "4.2.0",
     "url-parse": "1.2.0"
   },
