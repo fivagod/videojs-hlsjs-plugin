@@ -7,22 +7,31 @@
     <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
     <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
 
-    <script src="../dist/videojs-hlsjs-plugin.js"></script>
+    <script src="../dist/videojs-hlsjs-plugin-full.js"></script>
 </head>
 <body>
     <video id="example-video" width="600" height="300" class="video-js vjs-default-skin" controls autoplay muted>
-        <source src="http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8" type="application/x-mpegURL"/>
+        <!--source src="https://clvod.itworkscdn.net/bloombergvod/smil:itwfcdn/bloomberg/620888-7MBV757bJJW26g3.smil/playlist.m3u8" type="application/x-mpegURL"/-->
+        <!--source src="https://av.alarabiya.net/alarabiapublish/alhadath.smil/playlist.m3u8" type="application/x-mpegURL"/-->
+        <!--source src="https://svs.itworkscdn.net/lanatvlive/lana/playlist_dvr.m3u8" type="application/x-mpegURL"/-->
+        <source src="https://svs.itworkscdn.net/alrayyanqadeemlive/alrayyanqadeem_360p/playlist.m3u8" type="application/x-mpegURL"/>
     </video>
 
     <script>
         var options = {
             html5: {
                 hlsjsConfig: {
-                  // Put your hls.js config here
+        
+                  levelSwitchStrategy: 'next'
                 }
             }
         };
         var player = videojs('example-video', options);
+        player.on('ready', function() {
+          player.tech_.on('dvrsourcedetected', function(){
+          console.log('!!!!!!!!!!!!!!!!!!DVR!!!!!!!!!!!!!!')
+        })
+        })
     </script>
 </body>
 </html>

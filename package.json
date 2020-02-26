@@ -14,20 +14,25 @@
   },
   "scripts": {
     "build": "webpack --progress",
-    "build:dev": "cross-env NODE_ENV=development webpack --progress --watch",
+    "build:dev": "cross-env NODE_ENV=development webpack --progress",
     "dev": "cross-env NODE_ENV=development webpack-dev-server -d",
     "test:lint": "eslint lib/"
   },
   "dependencies": {
-    "hls.js": "^0.11.0",
+    "hls.js": "git+https://github.com/fivagod/hls.js.git",
     "lodash.defaults": "4.2.0",
     "url-parse": "1.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/helper-module-imports": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/register": "^7.4.4",
     "ajv": "^6.4.0",
-    "babel-core": "6.26.0",
-    "babel-loader": "7.1.4",
-    "babel-preset-es2015": "6.24.1",
+    "babel-loader": "^8.0.6",
     "cross-env": "4.0.0",
     "eslint": "4.11.0",
     "eslint-config-airbnb-base": "12.1.0",
@@ -35,6 +40,7 @@
     "uglify-js": "2.6.0",
     "video.js": "^5.20.5",
     "webpack": "3.8.1",
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "2.11.2",
+    "webworkify-webpack": "^2.1.5"
   }
 }
